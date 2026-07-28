@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond-500.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond-600.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond-700.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
 :root {
   --bg: #f7f5ee;
   --card: #fffefa;
@@ -28,6 +52,18 @@ button, input, select { font: inherit; }
 button, summary, select { cursor: pointer; }
 img { display: block; max-width: 100%; }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 :focus-visible {
   outline: 3px solid var(--sol);
   outline-offset: 3px;
@@ -35,7 +71,7 @@ img { display: block; max-width: 100%; }
 
 h1, h2, h3 {
   margin: 0;
-  font-family: var(--font-cormorant, Georgia), serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 600;
   line-height: 0.94;
   letter-spacing: -0.025em;
@@ -108,6 +144,11 @@ p { line-height: 1.65; }
   border-radius: 999px;
 }
 
+/* Na home a arte do hero já traz o logo grande logo abaixo do cabeçalho, então
+   o logo pequeno do topo fica duplicado. Escondido SÓ aqui: nas telas de
+   listagem e de imóvel ele é a única marca da página e precisa continuar. */
+body:has(.home-hero) .logo-link { visibility: hidden; }
+
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -145,13 +186,20 @@ p { line-height: 1.65; }
 
 .home-hero {
   position: relative;
-  display: grid;
+  display: block;
+  overflow: hidden;
   width: min(100% - 2rem, 1320px);
-  min-height: 630px;
-  margin: 2rem auto 7.5rem;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  margin: 2rem auto 0;
   border-radius: 1.5rem;
   background: var(--card);
-  grid-template-columns: .9fr 1.1fr;
+}
+
+.hero-approved-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .home-hero-copy {
@@ -186,16 +234,16 @@ p { line-height: 1.65; }
 }
 
 .home-hero-copy h1 {
-  max-width: 560px;
-  font-size: clamp(3.4rem, 4.8vw, 5.5rem);
-  text-wrap: balance;
+  font-size: clamp(3.5rem, 5vw, 5.45rem);
 }
+
+.home-hero-copy h1 span { display: block; }
 
 .home-hero-lead {
   max-width: 530px;
-  margin: 1.6rem 0 2rem;
+  margin: 1.25rem 0 0;
   color: #56605d;
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  font-size: .88rem;
 }
 
 .hero-actions {
@@ -257,7 +305,7 @@ p { line-height: 1.65; }
 .home-hero-media::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 65%, rgba(11, 29, 24, .4));
+  background: linear-gradient(180deg, transparent 78%, rgba(11, 29, 24, .16));
   content: "";
   pointer-events: none;
 }
@@ -280,17 +328,27 @@ p { line-height: 1.65; }
 }
 
 .image-caption strong {
-  font-family: var(--font-cormorant, Georgia), serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.15rem;
 }
 
-.home-search {
-  position: absolute;
-  z-index: 5;
-  right: 3rem;
-  bottom: -3.1rem;
+.hero-tools {
+  position: relative;
+  z-index: 6;
   display: grid;
-  width: min(820px, calc(100% - 6rem));
+  width: min(100% - 4rem, 1200px);
+  align-items: center;
+  /* margem superior positiva: a negativa (-3rem) puxava a barra de busca por
+     cima da arte do hero e cobria parte da foto */
+  margin: 2rem auto 4rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.home-search {
+  position: relative;
+  display: grid;
+  width: 100%;
   min-height: 110px;
   padding: 1rem;
   background: var(--card);
@@ -633,7 +691,7 @@ p { line-height: 1.65; }
 }
 
 .journey-image span { font-size: .58rem; }
-.journey-image strong { font-family: var(--font-cormorant, Georgia), serif; font-size: 1.15rem; }
+.journey-image strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.15rem; }
 
 .numbers-section {
   display: grid;
@@ -672,7 +730,7 @@ p { line-height: 1.65; }
 
 .quote-mark {
   color: var(--verde-salvia);
-  font-family: var(--font-cormorant, Georgia), serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 4rem;
   line-height: .6;
 }
@@ -868,7 +926,7 @@ p { line-height: 1.65; }
   .mobile-menu { display: block; }
   .home-hero {
     min-height: auto;
-    margin: 1rem auto 4rem;
+    margin: 1rem auto 0;
     grid-template-columns: 1fr;
   }
   .home-hero-copy {
@@ -880,12 +938,17 @@ p { line-height: 1.65; }
     min-height: 480px;
     border-radius: 0 0 1.5rem 1.5rem;
   }
+  .hero-tools {
+    width: min(100% - 4rem, 760px);
+    margin: 1.5rem auto 4rem;
+    grid-template-columns: 1fr;
+  }
   .home-search {
     position: relative;
     right: auto;
     bottom: auto;
-    width: calc(100% - 2rem);
-    margin: -3rem auto 0;
+    width: 100%;
+    margin: 0;
     grid-column: 1;
     grid-template-columns: 1fr 1fr;
   }
@@ -924,11 +987,12 @@ p { line-height: 1.65; }
   .home-hero-copy h1 { font-size: clamp(3.1rem, 14vw, 4.2rem); }
   .home-hero-lead { margin-top: 1.25rem; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 1rem; }
+  .hero-tools { width: min(100% - 2rem, 560px); gap: 1.4rem; }
   .hero-trust { flex-direction: column; margin-top: 2.6rem; gap: .65rem; }
   .home-hero-media { min-height: 390px; }
   .image-caption { right: .8rem; bottom: 4rem; left: .8rem; max-width: none; }
   .home-search {
-    width: calc(100% - 1rem);
+    width: 100%;
     padding: .65rem;
     grid-template-columns: 1fr;
   }
