@@ -144,6 +144,11 @@ p { line-height: 1.65; }
   border-radius: 999px;
 }
 
+/* Na home a arte do hero já traz o logo grande logo abaixo do cabeçalho, então
+   o logo pequeno do topo fica duplicado. Escondido SÓ aqui: nas telas de
+   listagem e de imóvel ele é a única marca da página e precisa continuar. */
+body:has(.home-hero) .logo-link { visibility: hidden; }
+
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -333,7 +338,9 @@ p { line-height: 1.65; }
   display: grid;
   width: min(100% - 4rem, 1200px);
   align-items: center;
-  margin: -3rem auto 4rem;
+  /* margem superior positiva: a negativa (-3rem) puxava a barra de busca por
+     cima da arte do hero e cobria parte da foto */
+  margin: 2rem auto 4rem;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 2rem;
 }
@@ -933,7 +940,7 @@ p { line-height: 1.65; }
   }
   .hero-tools {
     width: min(100% - 4rem, 760px);
-    margin: -2rem auto 4rem;
+    margin: 1.5rem auto 4rem;
     grid-template-columns: 1fr;
   }
   .home-search {
