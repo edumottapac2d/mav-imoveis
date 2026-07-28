@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter, Roboto_Mono } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
 
@@ -7,12 +7,6 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
 });
 
 const robotoMono = Roboto_Mono({
@@ -65,7 +59,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${inter.variable} ${cormorant.variable} ${robotoMono.variable}`}
+        className={`${inter.variable} ${robotoMono.variable}`}
       >
         {children}
       </body>

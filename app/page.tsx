@@ -39,25 +39,14 @@ export default function Home() {
       <main>
         <section className="home-hero">
           <div className="home-hero-copy">
-            <p className="eyebrow">Seu novo endereço começa aqui</p>
-            <h1>Encontre um lugar que combine com a sua vida.</h1>
+            <h1>
+              <span>Encontre um</span>
+              <span>lugar que combine</span>
+              <span>com a sua vida.</span>
+            </h1>
             <p className="home-hero-lead">
-              Imóveis escolhidos com olhar local e atendimento próximo em Vila
-              Valqueire e bairros vizinhos.
+              Vila Valqueire e bairros vizinhos
             </p>
-            <div className="hero-actions">
-              <Link className="button button-green" href="/imoveis/a-venda">
-                Explorar imóveis <span aria-hidden="true">→</span>
-              </Link>
-              <a className="quiet-link" href="https://wa.me/5521964907656">
-                Falar com um especialista
-              </a>
-            </div>
-            <div className="hero-trust" aria-label="Diferenciais da MAV Imóveis">
-              <span>Atendimento local</span>
-              <span>Visitas acompanhadas</span>
-              <span>Negociação transparente</span>
-            </div>
           </div>
 
           <div className="home-hero-media">
@@ -65,12 +54,18 @@ export default function Home() {
               src="/hero-mav.png"
               alt="Sala de apartamento clara e acolhedora com varanda"
             />
-            <div className="image-caption">
-              <span className="mono">VILA VALQUEIRE</span>
-              <strong>Espaços para viver bem</strong>
-            </div>
           </div>
+        </section>
 
+        <section className="hero-tools" aria-label="Busca rápida de imóveis">
+          <div className="hero-actions">
+            <Link className="button button-green" href="/imoveis/a-venda">
+              Explorar imóveis <span aria-hidden="true">→</span>
+            </Link>
+            <a className="quiet-link" href="https://wa.me/5521964907656">
+              Falar com um especialista
+            </a>
+          </div>
           <form className="home-search" action="/imoveis/a-venda">
             <label>
               Finalidade
