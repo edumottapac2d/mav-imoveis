@@ -38,23 +38,14 @@ export default function Home() {
       <Header />
       <main>
         <section className="home-hero">
-          <div className="home-hero-copy">
-            <h1>
-              <span>Encontre um</span>
-              <span>lugar que combine</span>
-              <span>com a sua vida.</span>
-            </h1>
-            <p className="home-hero-lead">
-              Vila Valqueire e bairros vizinhos
-            </p>
-          </div>
-
-          <div className="home-hero-media">
-            <img
-              src="/hero-mav.png"
-              alt="Sala de apartamento clara e acolhedora com varanda"
-            />
-          </div>
+          <h1 className="sr-only">
+            Encontre um lugar que combine com a sua vida.
+          </h1>
+          <img
+            className="hero-approved-art"
+            src="/og-editorial.png"
+            alt="MAV Imóveis — Encontre um lugar que combine com a sua vida. Vila Valqueire e bairros vizinhos."
+          />
         </section>
 
         <section className="hero-tools" aria-label="Busca rápida de imóveis">
