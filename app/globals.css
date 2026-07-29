@@ -140,7 +140,7 @@ p { line-height: 1.65; }
 
 .logo-link {
   display: block;
-  width: 148px;
+  width: 188px;
   border-radius: 999px;
 }
 
@@ -1015,7 +1015,7 @@ body:has(.home-hero) .logo-link { visibility: hidden; }
 
 @media (max-width: 600px) {
   .header-inner { width: min(100% - 1.25rem, 1320px); min-height: 4.2rem; }
-  .logo-link { width: 130px; }
+  .logo-link { width: 156px; }
   h1 { font-size: clamp(3.2rem, 14.5vw, 4.4rem); }
   h2 { font-size: clamp(2.1rem, 11vw, 3.1rem); }
   .home-hero { width: min(100% - 1.25rem, 1320px); }
