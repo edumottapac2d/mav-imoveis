@@ -577,24 +577,32 @@ body:has(.home-hero) .logo-link { visibility: hidden; }
 }
 
 .featured-carousel {
-  display: flex;
-  gap: 1.15rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  padding-bottom: .25rem;
+  overflow: hidden;
+  width: 100%;
 }
 
-.featured-carousel::-webkit-scrollbar { display: none; }
+.featured-carousel-track {
+  display: flex;
+  width: max-content;
+  gap: 1.15rem;
+  animation: featured-scroll 180s linear infinite;
+}
+
+.featured-carousel:hover .featured-carousel-track {
+  animation-play-state: paused;
+}
+
+@keyframes featured-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
 .featured-carousel-item {
-  flex: 0 0 calc((100% - 2.3rem) / 3);
-  min-width: 260px;
-  scroll-snap-align: start;
+  flex: 0 0 min(23rem, 78vw);
 }
 
-@media (max-width: 900px) {
-  .featured-carousel-item { flex-basis: 78%; }
+@media (prefers-reduced-motion: reduce) {
+  .featured-carousel-track { animation: none; }
 }
 
 .property-card {
