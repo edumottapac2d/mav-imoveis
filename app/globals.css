@@ -576,6 +576,27 @@ body:has(.home-hero) .logo-link { visibility: hidden; }
   gap: 1.15rem;
 }
 
+.featured-carousel {
+  display: flex;
+  gap: 1.15rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: .25rem;
+}
+
+.featured-carousel::-webkit-scrollbar { display: none; }
+
+.featured-carousel-item {
+  flex: 0 0 calc((100% - 2.3rem) / 3);
+  min-width: 260px;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 900px) {
+  .featured-carousel-item { flex-basis: 78%; }
+}
+
 .property-card {
   overflow: hidden;
   border: 0;

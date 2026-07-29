@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Footer, Header, PropertyCard } from "./components";
+import { FeaturedCarousel } from "./FeaturedCarousel";
+import { Footer, Header } from "./components";
 import { imoveis } from "./data";
 
 export const metadata: Metadata = {
@@ -101,11 +102,7 @@ export default function Home() {
               Ver todos os imóveis <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <div className="property-grid">
-            {imoveis.slice(0, 3).map((imovel, index) => (
-              <PropertyCard key={imovel.codigo} imovel={imovel} index={index} />
-            ))}
-          </div>
+          <FeaturedCarousel imoveis={imoveis} />
         </section>
 
         <section className="journey-section" id="bairros">
