@@ -21,13 +21,14 @@ Deploy no Vercel, todas as rotas confirmadas no ar:
 
 O painel é protótipo sem gravação em banco — ver seção 5.
 
-⚠️ **`git push` em `main` NÃO publica sozinho.** A integração automática do Vercel
-com o GitHub não está ativa neste projeto — confirmado em 29/07/2026, quando um push
-(`0c37259`) ficou sem nenhum deploy disparado, sem erro de build, simplesmente sem
-tentativa. Depois de qualquer push que precise ir ao ar, é preciso publicar manualmente
-(hoje isso é feito por quem tem acesso ao painel do Vercel). Não assuma que o site
-público reflete o que está em `main` sem confirmar visualmente antes de dizer que uma
-mudança "está no ar".
+`git push` em `main` publica sozinho. O projeto foi criado originalmente pela CLI do
+Vercel, sem ligação ao GitHub — por isso, entre 28 e 29/07/2026, pushes (incluindo o
+`0c37259`) não disparavam deploy nenhum, sem erro, sem tentativa. Corrigido em
+29/07/2026: Git conectado em Project Settings → Git ao repositório
+`edumottapac2d/mav-imoveis`, com Production Branch Tracking em `main`. A partir deste
+commit, todo push em `main` deve gerar deploy de produção automaticamente. Ainda assim,
+**confirme visualmente** antes de dizer que uma mudança "está no ar" — é rápido e evita
+repetir essa confusão.
 
 ---
 
