@@ -873,12 +873,18 @@ body:has(.home-hero) .logo-link { visibility: hidden; }
 }
 .filters select, .results-head select {
   width: 100%;
-  min-height: 2.7rem;
+  min-height: 2.9rem;
   border: 1px solid var(--line);
   border-radius: .25rem;
-  padding: .55rem .65rem;
-  background: var(--bg);
+  padding: .55rem 2rem .55rem .75rem;
+  background: var(--bg)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23173b33' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")
+    right .7rem center / 1rem no-repeat;
   color: var(--ink);
+  font-size: .88rem;
+  font-weight: 600;
+  appearance: none;
+  -webkit-appearance: none;
 }
 .filter-pair { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
 .filters fieldset { display: grid; margin: 1.25rem 0 0; padding: 1rem 0 0; border: 0; border-top: 1px solid var(--line); gap: .7rem; }
