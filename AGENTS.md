@@ -10,6 +10,20 @@ justificativa. Se for mudar mesmo assim, atualize este arquivo junto.
 
 ---
 
+## Onde está publicado
+
+Deploy no Vercel a partir da branch `main` (PR #1 mesclada, todas as rotas confirmadas
+no ar):
+
+- [Site público](https://mav-imoveis.vercel.app/)
+- [Painel — imóveis](https://mav-imoveis.vercel.app/painel)
+- [Cadastrar imóvel](https://mav-imoveis.vercel.app/painel/novo)
+- [Leads recebidos](https://mav-imoveis.vercel.app/painel/leads)
+
+O painel é protótipo sem gravação em banco — ver seção 5.
+
+---
+
 ## ⚠️ Decisões que parecem bug e não são
 
 ### 1. O logo do cabeçalho está escondido na home
