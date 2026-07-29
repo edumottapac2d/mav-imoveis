@@ -12,8 +12,7 @@ justificativa. Se for mudar mesmo assim, atualize este arquivo junto.
 
 ## Onde está publicado
 
-Deploy no Vercel a partir da branch `main` (PR #1 mesclada, todas as rotas confirmadas
-no ar):
+Deploy no Vercel, todas as rotas confirmadas no ar:
 
 - [Site público](https://mav-imoveis.vercel.app/)
 - [Painel — imóveis](https://mav-imoveis.vercel.app/painel)
@@ -21,6 +20,14 @@ no ar):
 - [Leads recebidos](https://mav-imoveis.vercel.app/painel/leads)
 
 O painel é protótipo sem gravação em banco — ver seção 5.
+
+⚠️ **`git push` em `main` NÃO publica sozinho.** A integração automática do Vercel
+com o GitHub não está ativa neste projeto — confirmado em 29/07/2026, quando um push
+(`0c37259`) ficou sem nenhum deploy disparado, sem erro de build, simplesmente sem
+tentativa. Depois de qualquer push que precise ir ao ar, é preciso publicar manualmente
+(hoje isso é feito por quem tem acesso ao painel do Vercel). Não assuma que o site
+público reflete o que está em `main` sem confirmar visualmente antes de dizer que uma
+mudança "está no ar".
 
 ---
 
